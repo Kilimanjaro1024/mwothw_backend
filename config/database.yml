@@ -58,6 +58,10 @@ development:
 test:
   <<: *default
   database: mwothw_api_backend_test
+  port: 5432
+  host: localhost
+  username: clayton
+  password: hello1
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,7 +84,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: mwothw_api_backend_production
-  username: mwothw_api_backend
-  password: <%= ENV['MWOTHW_API_BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['MY_APP_DATABASE_URL'] %>
