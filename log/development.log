@@ -139,3 +139,429 @@ Processing by UsersController#create as */*
 Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 4.2ms | Allocations: 6192)
 
 
+Started POST "/users/login" for ::1 at 2021-03-02 15:47:11 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/login"):
+  
+Started POST "/login" for ::1 at 2021-03-02 15:47:42 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/login" for ::1 at 2021-03-02 15:48:04 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/users/login" for ::1 at 2021-03-02 15:54:54 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/users/login"):
+  
+Started POST "/login" for ::1 at 2021-03-02 15:55:03 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/login" for ::1 at 2021-03-02 16:12:57 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/login" for ::1 at 2021-03-02 16:17:47 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for ::1 at 2021-03-02 16:17:57 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/login" for ::1 at 2021-03-02 16:20:57 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/login" for ::1 at 2021-03-02 16:21:28 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/users" for ::1 at 2021-03-02 16:22:47 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-02 16:22:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-02 16:22:58 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2021-03-02 16:23:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2021-03-02 16:24:09 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2021-03-02 16:24:12 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for ::1 at 2021-03-02 16:24:45 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser"], ["password", "newuser2"], ["email", "new@gmail"], ["created_at", "2021-03-02 22:24:45.410353"], ["updated_at", "2021-03-02 22:24:45.410353"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 7.2ms | Allocations: 6224)
+
+
+Started POST "/login" for ::1 at 2021-03-02 16:27:30 -0600
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/login" for ::1 at 2021-03-02 16:30:43 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.3ms | Allocations: 6109)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User id: 2, username: "newuser", password: [FILTERED], email: "new@gmail.com", num_posts: nil, created_at: "2021-03-02 21:20:14.501835000 +0000", updated_at: "2021-03-02 21:20:14.501835000 +0000">):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 16:37:26 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.6ms | Allocations: 5570)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User id: 2, username: "newuser", password: [FILTERED], email: "new@gmail.com", num_posts: nil, created_at: "2021-03-02 21:20:14.501835000 +0000", updated_at: "2021-03-02 21:20:14.501835000 +0000">):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 16:45:41 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.8ms | Allocations: 6115)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: 2, username: "newuser", password: [FILTERED], email: "new@gmail.com", num_posts: nil, created_at: "2021-03-02 21:20:14.501835000 +0000", updated_at: "2021-03-02 21:20:14.501835000 +0000">
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:32:in `login'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangePasswordName (20210302224920)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "password" TO "password_digest"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302224920"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2021-03-02 16:53:29 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.9ms | Allocations: 7439)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/users" for ::1 at 2021-03-02 16:55:22 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser"], ["password_digest", "$2a$12$B.YjK1DgnMKvU1seIb1W2OyqEQNuXTSYXZaUjOS9W4gaaGRkNxjRK"], ["email", "new@gmail"], ["created_at", "2021-03-02 22:55:22.984599"], ["updated_at", "2021-03-02 22:55:22.984599"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 215ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 9134)
+
+
+Started POST "/login" for ::1 at 2021-03-02 16:55:34 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1285)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 16:59:31 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.2ms | Allocations: 7439)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:00:13 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.2ms | Allocations: 3448)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:00:35 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.1ms | Allocations: 3493)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/users" for ::1 at 2021-03-02 17:01:12 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser", "password"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "email"=>"new@gmail"}}
+[31mUnpermitted parameters: :password, :user[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started POST "/users" for ::1 at 2021-03-02 17:02:16 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser"], ["password_digest", "newuser4"], ["email", "new@gmail"], ["created_at", "2021-03-02 23:02:16.731418"], ["updated_at", "2021-03-02 23:02:16.731418"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2512)
+
+
+Started POST "/login" for ::1 at 2021-03-02 17:02:25 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms | Allocations: 551)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:02:45 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms | Allocations: 551)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:06:35 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.6ms | Allocations: 3494)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:06:45 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.2ms | Allocations: 3463)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:07:46 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 550)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:09:22 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.1ms | Allocations: 3453)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:09:49 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 550)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/login" for ::1 at 2021-03-02 17:13:11 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.8ms | Allocations: 7435)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:32:in `login'
+Started POST "/users" for ::1 at 2021-03-02 17:13:59 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser5", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "password_digest"=>"[FILTERED]", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameters: :password_digest, :user[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 853)
+
+
+Started POST "/users" for ::1 at 2021-03-02 17:14:07 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser5"], ["password_digest", "$2a$12$7h0BCQgO.LvgSrNgU/MH9uk0wwT4lE/5TtecEgJnjD280M/TBBiH2"], ["email", "new@gmail.com"], ["created_at", "2021-03-02 23:14:07.847716"], ["updated_at", "2021-03-02 23:14:07.847716"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 219ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2566)
+
+
+Started POST "/login" for ::1 at 2021-03-02 17:14:22 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 216ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users" for ::1 at 2021-03-02 17:17:56 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-02 17:18:58 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/auto_login" for ::1 at 2021-03-02 17:20:17 -0600
+Processing by UsersController#auto_login as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 277)
+
+
+Started GET "/users" for ::1 at 2021-03-02 17:21:23 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-02 17:21:50 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/login" for ::1 at 2021-03-02 18:42:21 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for ::1 at 2021-03-02 18:42:31 -0600
+  
+SyntaxError (/home/clayton/Desktop/Project 4/mwothw_api_backend/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+...uthorized, only: [:auto_login :]
+...                              ^
+/home/clayton/Desktop/Project 4/mwothw_api_backend/app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+Started POST "/login" for ::1 at 2021-03-02 18:43:31 -0600
+  
+SyntaxError (/home/clayton/Desktop/Project 4/mwothw_api_backend/app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+Started POST "/login" for ::1 at 2021-03-02 18:44:07 -0600
+  
+NameError (undefined local variable or method `setup' for UsersController:Class):
+  
+app/controllers/users_controller.rb:58:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/login" for ::1 at 2021-03-02 18:44:18 -0600
+  
+SyntaxError (/home/clayton/Desktop/Project 4/mwothw_api_backend/app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+Started POST "/login" for ::1 at 2021-03-02 18:44:30 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 211ms (Views: 0.4ms | ActiveRecord: 6.2ms | Allocations: 7048)
+
+
