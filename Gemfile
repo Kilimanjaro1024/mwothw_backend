@@ -16,6 +16,8 @@ gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.12'
 
+gem 'hirb'
+
 gem 'jwt'
 
 # Use Active Storage variant

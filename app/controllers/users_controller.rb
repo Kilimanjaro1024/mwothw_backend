@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def auto_login
     render json: @user
   end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)

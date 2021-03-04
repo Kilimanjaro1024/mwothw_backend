@@ -565,3 +565,357 @@ Processing by UsersController#login as */*
 Completed 200 OK in 211ms (Views: 0.4ms | ActiveRecord: 6.2ms | Allocations: 7048)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-03 14:50:18 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.5ms | Allocations: 359)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2809)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-03-03 14:50:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2021-03-03 14:50:23 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for ::1 at 2021-03-03 14:54:11 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 228ms (Views: 0.5ms | ActiveRecord: 4.1ms | Allocations: 5146)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-03-03 14:55:20 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 773)
+
+
+Started POST "/login" for ::1 at 2021-03-03 15:55:22 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 234ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2873)
+
+
+Started POST "/login" for ::1 at 2021-03-03 15:55:35 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 208ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Started POST "/login" for ::1 at 2021-03-03 15:55:42 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 209ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 769)
+
+
+Started POST "/login" for ::1 at 2021-03-03 15:55:56 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 210ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started POST "/login" for ::1 at 2021-03-03 16:21:39 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 2621)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-03-03 16:23:15 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 561)
+
+
+Started POST "/users" for ::1 at 2021-03-03 16:26:27 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"newuser6", "email"=>"new@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser6"], ["password_digest", "$2a$12$1jZN2jJ8QM4j9xerQMmDhO/Tnc0ouLe55NsEw5dDwDI4OTHet1r4."], ["email", "new@gmail.com"], ["created_at", "2021-03-03 22:26:27.644286"], ["updated_at", "2021-03-03 22:26:27.644286"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 236ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 2688)
+
+
+Started POST "/users" for ::1 at 2021-03-03 16:26:53 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"newuser6", "email"=>"new@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser6"], ["password_digest", "$2a$12$UZc5IGvmN5ySXX77boubVu2wOdei1Ol35VOv.II7UB.zakVm.Gvbm"], ["email", "new@gmail.com"], ["created_at", "2021-03-03 22:26:53.381820"], ["updated_at", "2021-03-03 22:26:53.381820"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 231ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2122)
+
+
+Started POST "/users" for ::1 at 2021-03-03 16:27:38 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"newuser7", "email"=>"new@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser7", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser7"], ["password_digest", "$2a$12$uRaA64yq0KBQ7pPcRpsQPeQRi4D8TuxBFMSsZG18As7FgK/5yFhOe"], ["email", "new@gmail.com"], ["created_at", "2021-03-03 22:27:38.580212"], ["updated_at", "2021-03-03 22:27:38.580212"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 216ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2123)
+
+
+Started POST "/login" for ::1 at 2021-03-03 16:27:52 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser7", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser7"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser7"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 223ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20210303231600)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "topic" character varying, "content" character varying, "likes" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303231600"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPostIdToReviews (20210303235214)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPostIdToReviews (20210303235214)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303235214"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/auto_login" for ::1 at 2021-03-03 18:24:32 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/auto_login"):
+  
+Started GET "/auto_login" for ::1 at 2021-03-03 18:24:41 -0600
+Processing by UsersController#auto_login as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 281)
+
+
+Started POST "/auto_login" for ::1 at 2021-03-03 18:25:32 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/auto_login"):
+  
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2021-03-03 18:28:46 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-03 18:29:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2021-03-03 18:29:20 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for ::1 at 2021-03-03 18:29:33 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser5"], ["password_digest", "$2a$12$kUR6kHDx./ogjBfOafkk..Dt/sCc/vSOUrlLVgwjLLoiDKyW08dkq"], ["email", "new@gmail.com"], ["created_at", "2021-03-04 00:29:33.767663"], ["updated_at", "2021-03-04 00:29:33.767663"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 237ms (Views: 0.5ms | ActiveRecord: 5.7ms | Allocations: 8098)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "topic", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "First Post"], ["topic", "gaming"], ["content", "this is a post with content"], ["created_at", "2021-03-04 00:34:37.983685"], ["updated_at", "2021-03-04 00:34:37.983685"], ["user_id", 10]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2021-03-03 18:35:36 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser5"], ["password_digest", "$2a$12$qxQ3Ng3N8toM7e1a6FIlZuFWo0fVM2T0IUxzNkSCbV3PRwubwucWy"], ["email", "new@gmail.com"], ["created_at", "2021-03-04 00:35:36.762947"], ["updated_at", "2021-03-04 00:35:36.762947"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 225ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 8898)
+
+
+Started POST "/auto_login" for ::1 at 2021-03-03 18:36:18 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/auto_login"):
+  
+Started GET "/users" for ::1 at 2021-03-03 18:38:15 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users" for ::1 at 2021-03-03 18:50:56 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "newuser5"], ["password_digest", "$2a$12$e28uf45Tq8.w1F/1.qDFEu9EEMWjn8.BSr0XZcKu7q8k2tC8Z0Nxi"], ["email", "new@gmail.com"], ["created_at", "2021-03-04 00:50:56.317830"], ["updated_at", "2021-03-04 00:50:56.317830"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 226ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 8902)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "user" references[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "user" references[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "user" reference[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "user" references[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPosts (20210304010400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "user_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210304010400"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to FixReference (20210304011829)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "posts" ADD CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210304011829"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "topic", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "First Post1"], ["topic", "gaming"], ["content", "this is a post with content"], ["created_at", "2021-03-04 01:38:32.684935"], ["updated_at", "2021-03-04 01:38:32.684935"], ["user_id", 10]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "topic", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "First Post2"], ["topic", "gaming"], ["content", "this is a post with content"], ["created_at", "2021-03-04 01:38:41.661642"], ["updated_at", "2021-03-04 01:38:41.661642"], ["user_id", 10]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/login" for 127.0.0.1 at 2021-03-03 19:42:56 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{}}
+Started POST "/login" for 127.0.0.1 at 2021-03-03 19:42:56 -0600
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Parameters: {"user"=>{}}
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 5446)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 3589)
+
+
