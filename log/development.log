@@ -919,3 +919,1066 @@ Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 5446)
 Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 3589)
 
 
+Started POST "/login" for ::1 at 2021-03-04 11:06:40 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 4260)
+
+
+Started POST "/login" for ::1 at 2021-03-04 11:40:43 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 236ms (Views: 0.6ms | ActiveRecord: 7.9ms | Allocations: 6090)
+
+
+Started POST "/login" for ::1 at 2021-03-04 11:41:54 -0600
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "user"=>{"username"=>"newuser5", "email"=>"new@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 222ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 780)
+
+
+Started GET "/" for ::1 at 2021-03-04 11:44:10 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 357)
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 2746)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-03-04 11:44:10 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for ::1 at 2021-03-04 11:44:15 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 3.6ms | Allocations: 6397)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 11:47:00 -0600
+Processing by PostsController#create as */*
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "email"=>"new@gmail.com", "post"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 1.4ms | Allocations: 267)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post
+Did you mean?  post
+               password
+               controller
+               action):
+  
+app/controllers/posts_controller.rb:50:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-03-04 11:48:01 -0600
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.2ms | Allocations: 3932)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:19:in `create'
+Started POST "/posts" for ::1 at 2021-03-04 11:49:18 -0600
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+Completed 404 Not Found in 12ms (ActiveRecord: 5.0ms | Allocations: 5077)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:45:in `set_post'
+Started POST "/posts" for ::1 at 2021-03-04 11:51:12 -0600
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mPost Create (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "newuser5"], ["content", "newuser5"], ["created_at", "2021-03-04 17:51:12.859295"], ["updated_at", "2021-03-04 17:51:12.859295"], ["user_id", 6]]
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+Completed 201 Created in 32ms (Views: 0.9ms | ActiveRecord: 9.1ms | Allocations: 12835)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 11:51:30 -0600
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1554)
+
+
+Started GET "/users" for ::1 at 2021-03-04 11:53:42 -0600
+Processing by UsersController#index as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 18970)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 13:56:47 -0600
+Processing by PostsController#index as HTML
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 177)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 13:57:14 -0600
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 4.2ms | Allocations: 3772)
+
+
+Started GET "/index" for ::1 at 2021-03-04 13:57:48 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/posts" for ::1 at 2021-03-04 13:58:04 -0600
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 1456)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:02:06 -0600
+Processing by PostsController#index as */*
+  Parameters: {"title"=>"newuser5", "content"=>"newuser5", "post"=>{"title"=>"newuser5", "content"=>"newuser5"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 5.5ms | Allocations: 9034)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:23:17 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 205ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 3010)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:24:00 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:26:43 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 205ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:28:12 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 205ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:28:13 -0600
+Processing by PostsController#index as HTML
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 130)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:36:00 -0600
+Processing by PostsController#index as HTML
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:38:02 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 208ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2826)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:38:02 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1745)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:39:00 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 200ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:39:01 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1742)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:39:59 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 201ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:39:59 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1742)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:40:31 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 200ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:40:31 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1742)
+
+
+Started POST "/login" for ::1 at 2021-03-04 14:40:52 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 201ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 14:40:52 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1742)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUsernameToPosts (20210304205129)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "posts" ADD "username" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210304205129"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7587354045151444725)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/posts" for ::1 at 2021-03-04 15:01:06 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"new post", "content"=>"posty post post", "post"=>{"title"=>"new post", "content"=>"posty post post"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id", "username") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "new post"], ["content", "posty post post"], ["created_at", "2021-03-04 21:01:06.593847"], ["updated_at", "2021-03-04 21:01:06.593847"], ["user_id", 6], ["username", "newuser5"]]
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+Completed 201 Created in 30ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 17558)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 15:01:27 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 2067)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 15:03:30 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1904)
+
+
+Started POST "/login" for ::1 at 2021-03-04 15:04:54 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 979)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 15:04:55 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 15:56:17 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 5.8ms | Allocations: 4010)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 15:59:26 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:00:03 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:00:15 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1904)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:00:22 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 201ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 761)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:00:22 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:00:42 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:01:11 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 197ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 757)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:01:11 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:02:29 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:03:35 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 719)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:03:35 -0600
+Processing by PostsController#index as HTML
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 151)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:04:54 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 197ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:04:54 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:05:09 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1886)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:05:55 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM", "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:06:17 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM", "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:06:35 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:06:42 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 198ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:06:42 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:06:49 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM", "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:07:42 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:07:44 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started POST "/login" for ::1 at 2021-03-04 16:07:49 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 757)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:07:49 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1887)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:07:54 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:08:52 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:15:22 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM", "title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}, "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:19:13 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"], "post"=>{"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/posts[object%20Object]" for ::1 at 2021-03-04 16:21:00 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/posts[object%20Object]"):
+  
+Started POST "/posts" for ::1 at 2021-03-04 16:22:13 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"], "post"=>{"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:24:51 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "data"=>{"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}, "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:26:49 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"data"=>{"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}, "headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "post"=>{}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:28:36 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"headers"=>{"authorization"=>"bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.kPxvpXMFUMcI-LnBA9ngNl8mL00Sk4OPFn8lElNcXHM"}, "title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"], "post"=>{"title"=>["the food "], "topic"=>["asdfgsdgf"], "content"=>["world"]}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started POST "/posts" for ::1 at 2021-03-04 16:35:41 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"title"=>"the food ", "topic"=>"asdfgsdgf", "content"=>"world", "post"=>{"title"=>"the food ", "topic"=>"asdfgsdgf", "content"=>"world"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "topic", "content", "created_at", "updated_at", "user_id", "username") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "the food "], ["topic", "asdfgsdgf"], ["content", "world"], ["created_at", "2021-03-04 22:35:41.256183"], ["updated_at", "2021-03-04 22:35:41.256183"], ["user_id", 7], ["username", "newuser6"]]
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:24:in `create'
+Completed 201 Created in 19ms (Views: 0.5ms | ActiveRecord: 6.4ms | Allocations: 5470)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 16:35:41 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 2011)
+
+
+Started GET "/users" for ::1 at 2021-03-04 16:43:48 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 14432)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:42:37 -0600
+  
+SyntaxError (/home/clayton/Desktop/Project 4/mwothw_api_backend/config/routes.rb:3: syntax error, unexpected ':', expecting ']'
+...users, only: [:create, :index :update]
+...                              ^
+/home/clayton/Desktop/Project 4/mwothw_api_backend/config/routes.rb:7: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:3: syntax error, unexpected ':', expecting ']'
+config/routes.rb:7: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:3: syntax error, unexpected ':', expecting ']'
+config/routes.rb:7: syntax error, unexpected `end', expecting end-of-input
+Started POST "/login" for ::1 at 2021-03-04 18:42:41 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started POST "/login" for ::1 at 2021-03-04 18:42:42 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started POST "/login" for ::1 at 2021-03-04 18:44:26 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 205ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 7510)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:44:26 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 3.0ms | Allocations: 7093)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:44:33 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2031)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:44:34 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 2028)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:44:34 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 2028)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:45:33 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 201ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 773)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:45:33 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 2010)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:46:56 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:46:57 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 2010)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:53:34 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser5", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 200ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 3789)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:53:34 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 6247)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:53:42 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 2012)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:54:13 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 200ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:54:13 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 2010)
+
+
+Started GET "/" for ::1 at 2021-03-04 18:54:40 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/clayton/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.6ms | Allocations: 356)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 2744)
+
+
+Started POST "/login" for ::1 at 2021-03-04 18:54:55 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 197ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 18:54:55 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 2010)
+
+
+Started GET "/user_posts" for ::1 at 2021-03-04 18:56:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user_posts"):
+  
+Started GET "/posts" for ::1 at 2021-03-04 18:56:15 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 2009)
+
+
+Started GET "/user_posts" for ::1 at 2021-03-04 18:56:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user_posts"):
+  
+Started GET "/user_posts" for ::1 at 2021-03-04 18:57:11 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user_posts"):
+  
+Started GET "/login" for ::1 at 2021-03-04 18:57:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for ::1 at 2021-03-04 19:00:29 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/profile/user_posts" for ::1 at 2021-03-04 19:00:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/profile/user_posts"):
+  
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:00:52 -0600
+Processing by PostsController#user_posts as HTML
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:01:13 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 31ms (Views: 7.8ms | ActiveRecord: 6.0ms | Allocations: 14158)
+
+
+Started GET "/user_posts" for ::1 at 2021-03-04 19:01:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user_posts"):
+  
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:01:35 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1502)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:03:59 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1483)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:04:11 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1471)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:06:07 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 2022)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:06:08 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1471)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:14:00 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 2.9ms | Allocations: 3595)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:18:03 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1471)
+
+
+Started POST "/login" for ::1 at 2021-03-04 19:31:57 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 226ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 3041)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:31:58 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2014)
+
+
+Started POST "/login" for ::1 at 2021-03-04 19:32:53 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 206ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:32:53 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 2010)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:34:47 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 2010)
+
+
+Started POST "/login" for ::1 at 2021-03-04 19:34:53 -0600
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"newuser6", "password"=>"[FILTERED]", "user"=>{"username"=>"newuser6"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "newuser6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+Completed 200 OK in 197ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 756)
+
+
+Started GET "/posts" for ::1 at 2021-03-04 19:34:53 -0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 2010)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:35:07 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1489)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:35:44 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1472)
+
+
+Started GET "/profile/posts" for ::1 at 2021-03-04 19:51:46 -0600
+Processing by PostsController#user_posts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `logged_in_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/posts_controller.rb:22:in `user_posts'
+Completed 200 OK in 26ms (Views: 6.9ms | ActiveRecord: 3.3ms | Allocations: 11846)
+
+
