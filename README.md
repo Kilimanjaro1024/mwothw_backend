@@ -98,15 +98,15 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted |
 | --- | :---: |  :---: | :---: |
-| Login/Register(backend) | H | 6.5hrs| hr |
+| Login/Register(backend) | H | 6.5hrs| 10hr |
 | Login/Register(frontend) | H | 3hrs| hr |
 | Homepage | H | 3hrs| hr |
-| Post Form | H | 2hrs| hr |
+| Post Form | H | 2hrs| 2hr |
 | Header | H | 2hrs| hr |
 | Post Div | M | 3hrs| hr | 
 | Search Nav (frontend) | M | 1.5hrs| hr | 
 | Search Nav (backend) | M | 3hrs| hr | 
-| Profile page (My posts and Liked posts) | M | 4hrs| hr | 
+| Profile page (My posts and Liked posts) | M | 4hrs| 2hr | 
 | Profile page (Account Info) | L | 1.5hrs| hr | 
 | Responsive Design | L | 3.5hrs| hr |
 | Styling | H | 7hrs| hr |
