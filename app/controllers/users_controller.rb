@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:auto_login]
+  # before_action :set_user
 
   # GET /users
   def index
-    @users = User.all
-
-    render json: @users.to_json(include: :posts)
+    # @user = User.where(id: @user.id)
+    @user = User.find(params[:id])
+    render json: @user
   end
 
   # GET /users/1
   def show
+    # @user = User.where(id: @user.id)
     render json: @user
   end
 
@@ -57,9 +59,9 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_user
-    #   @user = User.find(params[:id])
-    # end
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     # Only allow a list of trusted parameters through.
     def user_params

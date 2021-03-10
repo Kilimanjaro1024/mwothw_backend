@@ -24,6 +24,13 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
+  def posts_by_user
+    @posts = Post.where(username: @users.username)
+    p params
+
+    render json: @posts
+  end
+
   # POST /posts
   def create
     @post = Post.new(post_params)
@@ -54,6 +61,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
+      p params
       @post = Post.find(params[:id])
     end
 

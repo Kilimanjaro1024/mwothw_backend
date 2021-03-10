@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_020525) do
+ActiveRecord::Schema.define(version: 2021_03_07_234150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_020525) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
+    t.string "tag"
     t.index ["user_id"], name: "index_liked_posts_on_user_id"
   end
 
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_020525) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "username"
+    t.string "tag"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
