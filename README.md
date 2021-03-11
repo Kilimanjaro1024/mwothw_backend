@@ -3,9 +3,7 @@
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
 - [Mobile](https://www.figma.com/file/ao0liMofrTc91wjljADoOB/My-Way-or-the-Highway?node-id=0%3A1)
-- [Tablet]()
-- [Desktop]()
-- [React Architecture](https://imgur.com/a/oA8hnAh)
+- [React Architecture](https://media.discordapp.net/attachments/771150639732359212/819617502417911808/JPEG_20210311_110717.jpg?width=377&height=670)
 
 ### Project Description
 
