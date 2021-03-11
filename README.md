@@ -98,19 +98,19 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted |
 | --- | :---: |  :---: | :---: |
-| Login/Register(backend) | H | 6.5hrs| 10hr |
-| Login/Register(frontend) | H | 3hrs| hr |
-| Homepage | H | 3hrs| hr |
-| Post Form | H | 2hrs| 2hr |
-| Header | H | 2hrs| hr |
-| Post Div | M | 3hrs| hr | 
-| Search Nav (frontend) | M | 1.5hrs| hr | 
+| Login/Register(backend) | H | 6.5hrs| 12hr |
+| Login/Register(frontend) | H | 3hrs| 4hr |
+| Homepage | H | 3hrs| 4hr |
+| Post Form | H | 2hrs| 3hr |
+| Header | H | 2hrs| 3hr |
+| Post Div | M | 3hrs| 4hr | 
+| Search Nav (frontend) | M | 1.5hrs| 2hr | 
 | Search Nav (backend) | M | 3hrs| hr | 
 | Profile page (My posts and Liked posts) | M | 4hrs| 2hr | 
-| Profile page (Account Info) | L | 1.5hrs| hr | 
-| Responsive Design | L | 3.5hrs| hr |
-| Styling | H | 7hrs| hr |
-| Total | H | 40hrs| hrs | 
+| Profile page (Account Info) | L | 1.5hrs| 2hr | 
+| Responsive Design | L | 3.5hrs| 4hr |
+| Styling | H | 7hrs| 9hr |
+| Total | H | 40hrs| 49*hrs | 
 
 ## Post MVP
 
@@ -123,23 +123,49 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Total | H | 12.5hrs| hrs | hrs |
 
 ## Additional Libraries
- - Scss
- - gatsby-starter-bootstrap
+ - styled components
  - jwt
  - @hapi/joi
  - bcrypt
+ - axios
 
 ## Code Snippet
 
-
+this handleChange function for the registration feature was my first attempt at setting up a password confirmation system. while I feel I could address the conditional logic a bit better I was reasonably pleased with how intuitve it was to get this function up and running.
 
 ```
+const handleChange = (event) => {
+    console.log(event.target.name);
+    if (event.target.name === "submited_password") {
+      console.log("hi");
+      submited_password = event.target.value;
+      console.log(submited_password);
+    }
+    if (event.target.name === "confirm_password") {
+      confirm_password = event.target.value;
+      console.log(confirm_password);
+    }
+    if (submited_password === confirm_password) {
+      setFormData({ ...formData, password: [submited_password] });
+    }
+    if (
+      event.target.name !== "submited_password" &&
+      event.target.name !== "confirm_password"
+    ) {
+      console.log("name");
+      setFormData({
+        ...formData,
+        [event.target.name]: [event.target.value],
+      });
+    }
+    
+  };
 
 ```
 
 ## Issues and Resolutions
 
-- Issue: 
+- Issue: I 
     - Resolution: 
 - Issue: 
     - Resolution: 
