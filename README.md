@@ -165,11 +165,9 @@ const handleChange = (event) => {
 
 ## Issues and Resolutions
 
-- Issue: I 
+- Issue: I had trouble getting my transitions to animate with styled componenets.
     - Resolution: 
-- Issue: 
-    - Resolution: 
-- Issue: 
+- Issue: While referenceing user info state the sate would be reset on any refresh the information would be lost and those references would error out
     - Resolution: 
 - Issue: 
     - Resolution: 
