@@ -5,6 +5,10 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - [Mobile](https://www.figma.com/file/ao0liMofrTc91wjljADoOB/My-Way-or-the-Highway?node-id=0%3A1)
 - [React Architecture](https://media.discordapp.net/attachments/771150639732359212/819617502417911808/JPEG_20210311_110717.jpg?width=377&height=670)
 
+-[Frontend-Link](https://mywayorthehighway.netlify.app/)
+
+-[Backend-Link](https://mwothw-final-backend.herokuapp.com/)
+
 ### Project Description
 
 My Way or the Highway is a blog site where users can create posts about any activity they choose and describe how they do it and why it is better, more efficient, or what have you. This site is a platform for people to explain how they choose to execute their endeavors in depth. The purpose of this site is so that users can exchange ideas and thought processes with one another.
@@ -164,8 +168,8 @@ const handleChange = (event) => {
 ## Issues and Resolutions
 
 - Issue: I had trouble getting my transitions to animate with styled componenets.
-    - Resolution: 
+    - Resolution: After some investigation I discovered that styled components uses keyframes to animate.
 - Issue: While referenceing user info state the sate would be reset on any refresh the information would be lost and those references would error out
-    - Resolution: 
-- Issue: 
-    - Resolution: 
+    - Resolution: I stored the required information from user in session storage so that rerenders can occur without dumping all the realevant information.
+- Issue: While developing the backend I had a broken migration that was breaking the database when it was deployed.
+    - Resolution: commenting out the changes in the offending migrations allowed th heroku app to build properly.
