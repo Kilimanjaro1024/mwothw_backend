@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :liked_posts
   resources :posts
-  resources :users, only: [:create, :index]
+  resources :users, only: [:create, :update]
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
   get "/user", to: "users#show"

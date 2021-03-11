@@ -25,7 +25,7 @@ class LikedPostsController < ApplicationController
     @liked_post = LikedPost.new(liked_post_params)
     @liked_post.user_id = @user.id
     @liked_post.username = @user.username
-
+    
     if @liked_post.save
       render json: @liked_post, status: :created, location: @liked_post
     else
@@ -55,6 +55,6 @@ class LikedPostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def liked_post_params
-      params.require(:liked_post).permit(:title, :topic, :content, :likes, :user_id)
+      params.require(:liked_post).permit(:title, :topic, :content, :likes, :user_id, :post_id)
     end
 end
